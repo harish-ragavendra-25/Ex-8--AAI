@@ -1,7 +1,7 @@
  <H3>HARISH RAGAVENDRA S</H3>
-<H3>REGISTER NO. 212222230045</H3>
+<H3>212222230045</H3>
 <H3>EX. NO.8</H3>
-<H3>DATE: 27-04-2024</H3>
+<H3>DATE:28-04-2024</H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
 <H3>Aim:</H3> 
  To implement the conversion of live speech to text.<BR>
@@ -20,28 +20,33 @@ Step 11: Perform speech recognition with exceptional handling:<Br>
 •	If successful, print the recognized text.<Br>
 •	Handle specific exceptions: If the recognition result is unknown or if there is an issue with the request to the Google Speech Recognition service, print corresponding error messages.<Br>
 •	A generic exception block captures any other unexpected errors.<Br>
-
 <H3>Program:</H3>
 
-```
+``` python
 import speech_recognition as sr
-r = sr.Recognizer()
-duration = 5
-print("say something")
+# initialize the reconizer
+r=sr.Recognizer()
+# set duration for the audio
+duration=15 # second=
+# record audio
+print("say somthing:")
+
 with sr.Microphone() as source:
-  audio_data = r.listen(source,timeout=duration)
+    audio_date=r.listen(source,timeout=duration)
 try:
-  text = r.recognize_google(audio_data)
-  print('you said:',text)
+    text=r.recognize_google(audio_date)
+    print("you said:",text)
 except sr.UnknownValueError:
-  print('sorry,could not understand audio')
+    print("sorry ,could not undersand audio")
 except sr.RequestError as e:
-  print(f'Error with the request to Google Speech Recognition service: {e}')
+    print(f'Error with the request to google speech recognation service:{e}')
 except Exception as e:
-  print(f'Error: {e}')
+    print(f'Error:{e}')
 ```
-
+<br>
 <H3> Output:</H3>
-Show the results here
 
-<H3> Result:</H3>
+![image](https://github.com/BaskaranV15/Ex-8--AAI/assets/118703522/26a6c5a6-cc36-4312-9a73-3736ffde3aa7)
+
+<H3> Result:</H3> 
+implemented the conversion of live speech to text.
